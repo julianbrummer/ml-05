@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>uni.exercise</groupId>
   <artifactId>ml-05</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <name>MachineLearning Exercise 05</name>
   <build>
   	<plugins>
