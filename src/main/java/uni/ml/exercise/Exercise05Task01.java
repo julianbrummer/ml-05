@@ -37,6 +37,8 @@ public class Exercise05Task01 {
 				System.out.println(c.targetValues());
 				//System.out.println(c.classProbabilities());
 				//System.out.println(c.conditionalWordProbabilities());
+				System.out.println("Size training set: " + split.trainingSet.numInstances());
+				System.out.println("Size test set: " + split.testSet.numInstances());
 				System.out.println("accuracy: " + c.testBayesText(split.testSet));
 				
 				File outputPath = args.length >= 3? new File(args[2]) : null;
