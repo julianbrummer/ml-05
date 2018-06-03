@@ -3,6 +3,10 @@ package uni.ml.text;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A text instance contains a class label (optional) and a list of (possibly duplicated) words.
+ *
+ */
 public class TextInstance {
 	private String label;
 	private List<String> words;
@@ -33,6 +37,11 @@ public class TextInstance {
 		return words.size();
 	}
 
+	/**
+	 * Counts how often a word appears in the list of words.
+	 * @param w the word to count.
+	 * @return The number of times w occurs in words.
+	 */
 	public int countWord(String w) {
 		int count = 0;
 		for (String word : words) {

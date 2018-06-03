@@ -9,10 +9,10 @@ import uni.ml.util.Sampling;
 
 
 /**
- * A view on a subset of a dataset. 
+ * A view on a subset of a text dataset. 
  * A dataset can be decorated with multiple views.
- * For example a dataset can be decorated with an {@link DatasetIndexedView} to select instances, 
- * which itself can be decorated with a {@link DatasetPredicateView} to filter out instances according to some predicate.
+ * For example a dataset can be decorated with an {@link TextDatasetIndexedView} to select instances, 
+ * which itself can be decorated with a {@link TextDatasetPredicateView} to filter out instances according to some predicate.
  * 
  */
 public abstract class TextDatasetView {
@@ -89,7 +89,7 @@ public abstract class TextDatasetView {
 	}
 	
 	
-	private String name = "unnamed";
+	private String name = null;
 	
 	public TextDatasetView() {
 	}
@@ -103,7 +103,11 @@ public abstract class TextDatasetView {
 	}
 	
 	public String name() {
-		return name;
+		return name == null? "unnamed" : name;
+	}
+	
+	public boolean unnamed() {
+		return name == null;
 	}
 	
 // access methods instances	
@@ -121,6 +125,9 @@ public abstract class TextDatasetView {
 	
 //
 	
+	/**
+	 * @return The number of words in the whole dataset (counting duplicated words multiple times).
+	 */
 	public int numWords() {
 		int numWords = 0;
 		for (TextInstance instance : instances()) {
